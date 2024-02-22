@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 export const ContainerContent = ({ children }: { children: ReactNode }) => {
   return (
     <motion.div
-      className="w-full h-full"
+      className="w-full flex items-center justify-center flex-col"
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{
