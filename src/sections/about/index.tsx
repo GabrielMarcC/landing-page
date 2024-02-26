@@ -37,15 +37,16 @@ export const AboutSection = () => {
           </ContainerContent>
         </div>
       </div>
-      <ContainerContent delay={1} duration={1}>
-        <div className="w-full flex justify-center items-center flex-col lg:flex-row lg:pt-12">
-          {aboutData.map((data, index) => {
-            return (
-              <Categories icon={data.icon} title={data.title} key={index} />
-            );
-          })}
-        </div>
-      </ContainerContent>
+
+      <div className="w-full flex justify-center items-center flex-col lg:flex-row lg:pt-12">
+        {aboutData.map((data, index) => {
+          return (
+            <ContainerContent key={index} delay={0.7} duration={0.7}>
+              <Categories icon={data.icon} title={data.title} />
+            </ContainerContent>
+          );
+        })}
+      </div>
     </section>
   );
 };

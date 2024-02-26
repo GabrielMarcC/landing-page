@@ -1,8 +1,7 @@
 "use client";
 
-import { motion, useAnimation } from "framer-motion";
-import { ReactNode, useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import { ReactNode } from "react";
 
 type Props = {
   children: ReactNode;
@@ -11,15 +10,6 @@ type Props = {
 };
 
 export const ContainerContent = ({ children, duration, delay }: Props) => {
-  const control = useAnimation();
-  const { ref, inView } = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      control.start("visible");
-    }
-  }, [control, inView]);
-
   const variants = {
     visible: {
       opacity: 1,
@@ -27,21 +17,16 @@ export const ContainerContent = ({ children, duration, delay }: Props) => {
       x: 0,
       transition: { duration: duration, delay: delay },
     },
-    hidden: { opacity: 1, scale: 0, x: 200 },
+    hidden: { opacity: 0, scale: 0, x: -100 },
   };
 
   return (
     <motion.div
       className="w-full flex items-center justify-center flex-col"
-      ref={ref}
       initial="hidden"
-      animate={control}
+      whileInView="visible"
+      viewport={{ once: true }}
       variants={variants}
-      transition={{
-        duration: duration,
-        delay: delay,
-        ease: [0, 0.71, 0.2, 1.01],
-      }}
     >
       {children}
     </motion.div>

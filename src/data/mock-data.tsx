@@ -1,9 +1,4 @@
-import {
-  BuildingIcon,
-  FaHouseUserIcon,
-  FaTreeIcon,
-  GrConfigureIcon,
-} from "@/icons";
+import { BuildingIcon, FaHouseUserIcon, FaTreeIcon, Tools } from "@/icons";
 import { ReactNode } from "react";
 
 export interface AboutData {
@@ -13,7 +8,7 @@ export interface AboutData {
 
 export const aboutData: AboutData[] = [
   { icon: <FaHouseUserIcon />, title: "residêncial" },
-  { icon: <BuildingIcon />, title: "comerciais" },
-  { icon: <FaTreeIcon />, title: "sustentáveis" },
-  { icon: <GrConfigureIcon />, title: "incorporação" },
+  { icon: <BuildingIcon />, title: "comercial" },
+  { icon: <FaTreeIcon />, title: "sustentável" },
+  { icon: <Tools />, title: "incorporação" },
 ];
