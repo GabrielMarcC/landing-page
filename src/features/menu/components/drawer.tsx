@@ -24,6 +24,7 @@ export const Drawer = () => {
           <ul className="font-bold flex flex-col items-start justify-center">
             <li className="py-2 cursor-pointer">Início</li>
             <li className="py-2 cursor-pointer">Sobre</li>
+            <li className="py-2 cursor-pointer">Serviços</li>
             <li className="py-2 cursor-pointer">Projetos</li>
             <li className="py-2 cursor-pointer">Contato</li>
           </ul>

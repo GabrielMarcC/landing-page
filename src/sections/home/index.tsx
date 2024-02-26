@@ -1,4 +1,3 @@
-import { ContainerContent } from "@/features/menu/components/container-content";
 import { Button } from "@/components/ui/button";
 
 export const HomeSection = () => {

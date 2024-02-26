@@ -1,6 +1,7 @@
 import { AboutSection } from "@/sections/about";
 import { HomeSection } from "@/sections/home";
 import { Menu } from "@/features/menu";
+import { ServicesSection } from "@/sections/services";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Menu />
       <HomeSection />
       <AboutSection />
+      <ServicesSection />
     </main>
   );
 }

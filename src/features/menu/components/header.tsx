@@ -16,9 +16,10 @@ export const Header = () => {
         />
       </div>
       <nav className="w-[30%] items-center justify-center gap-12 text-darkgray hidden sm:block md:flex lg:flex font-bold  ">
-        <span className="hover:text-gold hover:cursor-pointer">Início</span>
-        <span className="hover:text-gold hover:cursor-pointer">Sobre</span>
-        <span className="hover:text-gold hover:cursor-pointer">Projetos</span>
+        <a className="hover:text-gold hover:cursor-pointer">Início</a>
+        <a className="hover:text-gold hover:cursor-pointer">Sobre</a>
+        <a className="hover:text-gold hover:cursor-pointer">Serviços</a>
+        <a className="hover:text-gold hover:cursor-pointer">Projetos</a>
       </nav>
       <Button
         variant="outline"

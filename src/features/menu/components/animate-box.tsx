@@ -9,7 +9,7 @@ type Props = {
   duration: number;
 };
 
-export const ContainerContent = ({ children, duration, delay }: Props) => {
+export const AnimateBox = ({ children, duration, delay }: Props) => {
   const variants = {
     visible: {
       opacity: 1,
