@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { ReactNode, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 type Props = {
   children: ReactNode;
@@ -10,36 +11,39 @@ type Props = {
 };
 
 export const ContainerContent = ({ children, duration, delay }: Props) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const elementRef = useRef(null);
+  const control = useAnimation();
+  const { ref, inView } = useInView();
 
   useEffect(() => {
-    if (!elementRef.current) return;
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          observer.unobserve(entry.target);
-          setIsVisible(true);
-        }
-      });
-    });
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView]);
 
-    observer.observe(elementRef.current);
+  const variants = {
+    visible: {
+      opacity: 1,
+      scale: 1,
+      x: 0,
+      transition: { duration: duration, delay: delay },
+    },
+    hidden: { opacity: 1, scale: 0, x: 200 },
+  };
 
-    return () => observer.disconnect();
-  }, []);
   return (
     <motion.div
       className="w-full flex items-center justify-center flex-col"
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={{ opacity: 1, scale: 1 }}
+      ref={ref}
+      initial="hidden"
+      animate={control}
+      variants={variants}
       transition={{
         duration: duration,
         delay: delay,
         ease: [0, 0.71, 0.2, 1.01],
       }}
     >
-      <div ref={elementRef} className="w-full">{isVisible && children}</div>
+      {children}
     </motion.div>
   );
 };
