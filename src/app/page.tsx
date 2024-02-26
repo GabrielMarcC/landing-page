@@ -1,5 +1,5 @@
-import { AboutSection } from "@/features/about";
-import { HomeSection } from "@/features/home";
+import { AboutSection } from "@/sections/about";
+import { HomeSection } from "@/sections/home";
 import { Menu } from "@/features/menu";
 
 export default function Home() {
