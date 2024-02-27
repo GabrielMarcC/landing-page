@@ -2,6 +2,7 @@ import { AboutSection } from "@/sections/about";
 import { HomeSection } from "@/sections/home";
 import { Menu } from "@/features/menu";
 import { ServicesSection } from "@/sections/services";
+import { ProjectsSection } from "@/sections/projects";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <HomeSection />
       <AboutSection />
       <ServicesSection />
+      <ProjectsSection />
     </main>
   );
 }

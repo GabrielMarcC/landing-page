@@ -37,7 +37,7 @@ export const AboutSection = () => {
           </AnimateBox>
         </div>
       </div>
-      <div className="w-full min-h-80 flex justify-center items-center flex-col lg:flex-row lg:pt-[8rem]">
+      <div className="w-full min-h-80 flex justify-center items-center flex-col lg:flex-row lg:pt-[3rem]">
         {aboutData.map((data, index) => {
           return (
             <AnimateBox key={index} delay={0.7} duration={0.7}>

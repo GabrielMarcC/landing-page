@@ -22,7 +22,7 @@ export const AnimateBox = ({ children, duration, delay }: Props) => {
 
   return (
     <motion.div
-      className="w-full flex items-center justify-center flex-col"
+      className="w-full h-auto flex items-center justify-center flex-col"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
